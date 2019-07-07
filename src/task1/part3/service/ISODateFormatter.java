@@ -1,25 +1,30 @@
 package task1.part3.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Locale;
 
 public class ISODateFormatter {
     public static void formatDate(String dateString) {
-        //Example: "Friday, Aug 10, 2016 12:10:56 PM"
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("cccc, MMM dd, yyyy h:m:s a");
         DateTimeFormatter formatter = new DateTimeFormatterBuilder()
                 .parseCaseInsensitive()
                 .appendPattern("cccc, MMM dd, yyyy h:m:s a")
                 .toFormatter(Locale.ENGLISH);
-        LocalDateTime date = LocalDateTime.parse(dateString, formatter);
+        LocalDate date = LocalDate.parse(dateString, formatter);
+        LocalDateTime localDate = LocalDateTime.parse(dateString, formatter);
+        ZonedDateTime zonedDate = ZonedDateTime.of(localDate, ZoneId.of("+04:00:00"));
+        ZonedDateTime zonedOffsetDate = ZonedDateTime.of(localDate, ZoneId.of("GMT+4"));
 
-        System.out.println(date.getDayOfMonth());
-        System.out.println(date.getDayOfWeek());
-        System.out.println(date.getMonth());
-        System.out.println(date.getYear());
-        System.out.println(date.getHour());
-        System.out.println(date.getMinute());
+
+        System.out.print("Izhevsk date:         ");
+        System.out.println(date.toString());
+        System.out.print("Izhevsk offset time:  ");
+        System.out.println(zonedDate.toString());
+        System.out.print("Izhevsk region time:  ");
+        System.out.println(zonedOffsetDate.toString());
     }
 }
