@@ -1,14 +1,12 @@
-package service;
+package task1.part3.service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Locale;
 
-public interface ISODateFormatter {
-
-    static void formatDate(String dateString) {
+public class ISODateFormatter {
+    public static void formatDate(String dateString) {
         //Example: "Friday, Aug 10, 2016 12:10:56 PM"
         //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("cccc, MMM dd, yyyy h:m:s a");
         DateTimeFormatter formatter = new DateTimeFormatterBuilder()
