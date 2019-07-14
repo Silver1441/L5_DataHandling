@@ -9,7 +9,7 @@ import task4.part3.service.PhoneNumberFormatter;
 
 public class PhoneNumberFormatterMain {
     public static void main(String[] args) {
-        String test = "Дан набор телефонов: +7 (3412) 517-647, 8-3412-4997-12, 454545 и +73412986532";
+        String test = "Дан набор телефонов: +7 (3412) 517-647, 8-3412-4997-12, 453565 и +73412986532";
         System.out.println(PhoneNumberFormatter.formatPhoneNumbers(test));
     }
 }

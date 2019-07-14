@@ -1,7 +1,7 @@
 package task4.part4.entitie;
 
 public class CallCenterManager implements Employee {
-    private String appointment = "менеджер call-центра";
+    private String appointment = "call-center manager";
 
     private int employeeID;
     private String employeeName;

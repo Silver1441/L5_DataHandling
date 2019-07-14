@@ -10,7 +10,7 @@ public class PhoneNumberFormatter {
         StringBuilder resultString = new StringBuilder();
 
         while (matcher.find()) {
-            resultString = resultString.append(matcher.replaceAll(""));
+            resultString.append(matcher.replaceAll(""));
         }
         return resultString.toString();
     }
