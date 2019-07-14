@@ -15,7 +15,6 @@ public class TemplateHandlerImpl implements TemplateHandler {
     private String template;
 
     StringBuilder resultString = new StringBuilder();
-    List<String> templateKeys = new ArrayList<>();
 
     public TemplateHandlerImpl(Client client, Employee employee, String template) {
         this.client = client;
@@ -26,17 +25,13 @@ public class TemplateHandlerImpl implements TemplateHandler {
     public String getFormattedText() {
         Pattern pattern = Pattern.compile("\\$[\\wа-яА-Я]+");
         Matcher matcher = pattern.matcher(template);
+        resultString.append(template);
 
         while (matcher.find()) {
             String templateKey = template.substring(matcher.start(), matcher.end());
-            templateKeys.add(templateKey);
-        }
-
-        resultString.append(template);
-        for (int i = 0; i < templateKeys.size(); i++) {
-            resultString = resultString.replace(resultString.indexOf(templateKeys.get(i)),
-                    resultString.indexOf(templateKeys.get(i)) + templateKeys.get(i).length(),
-                    getTemplateValue(templateKeys.get(i)));
+            resultString = resultString.replace(resultString.indexOf(templateKey),
+                    resultString.indexOf(templateKey) + templateKey.length(),
+                    getTemplateValue(templateKey));
         }
         return resultString.toString();
     }

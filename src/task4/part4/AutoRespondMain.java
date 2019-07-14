@@ -19,8 +19,8 @@ import static task4.part4.lib.TemplateHolder.respondOverpaymentAutopayment;
 
 public class AutoRespondMain {
     public static void main(String[] args) {
-        Client mockClient = new ClientBasic(1, 236000535, "Petr", "Shtolc", "Grigorievich");
-        Employee mockWorker = new CallCenterManager(1, "Ania", "Fedorova", "Pavlovna");
+        Client mockClient = new ClientBasic(1, 236000535, "Petr", "Glinko", "Grigorievich");
+        Employee mockWorker = new CallCenterManager(1, "Victoria", "Fedorova", "Pavlovna");
 
         TemplateHandler handler = new TemplateHandlerImpl(mockClient, mockWorker, respondOverpaymentAutopayment);
         System.out.println(handler.getFormattedText());
