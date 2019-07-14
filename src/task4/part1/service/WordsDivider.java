@@ -17,8 +17,8 @@ public class WordsDivider {
             dividedText.add(text.substring(matcher.start(), matcher.end()));
         }
 
-        for (int i = 0; i < dividedText.size(); i++) {
-            resultText.append(dividedText.get(i));
+        for (String s : dividedText) {
+            resultText.append(s);
             resultText.append("\n");
         }
 
