@@ -30,7 +30,7 @@ public class AgeCalculatorImpl implements AgeCalculator {
                 hoursDiff = currentTime.getHour() - birthDay.getHour();
             } else {
                 hoursDiff = currentTime.getHour() - birthDay.getHour() + 24;
-                daysDiff -= daysDiff;
+                daysDiff = daysDiff - 1;
             }
 
             if (currentTime.getMinute() >= birthDay.getMinute()) {
@@ -38,10 +38,10 @@ public class AgeCalculatorImpl implements AgeCalculator {
             } else {
                 minsDiff = currentTime.getMinute() - birthDay.getMinute() + 60;
                 if (hoursDiff != 0) {
-                    hoursDiff -= hoursDiff;
+                    hoursDiff = hoursDiff - 1;
                 } else {
                     hoursDiff = 23;
-                    daysDiff -= daysDiff;
+                    daysDiff = daysDiff - 1;
                 }
             }
 
