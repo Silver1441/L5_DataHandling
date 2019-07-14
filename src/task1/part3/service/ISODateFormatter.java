@@ -14,8 +14,7 @@ public class ISODateFormatter {
                 .appendPattern("cccc, MMM dd, yyyy h:m:s a")
                 .toFormatter(Locale.ENGLISH);
         ZonedDateTime zonedDate = ZonedDateTime.of(LocalDateTime.parse(dateString, formatter), ZoneId.of("+04:00:00"));
-        final DateTimeFormatter isoFormatter = DateTimeFormatter.ISO_ZONED_DATE_TIME;
 
-        return zonedDate.format(isoFormatter);
+        return zonedDate.format(DateTimeFormatter.ISO_ZONED_DATE_TIME);
     }
 }

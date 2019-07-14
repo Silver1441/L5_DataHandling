@@ -10,7 +10,7 @@ public class ToSingleLowercaseStringParser {
     private String givenText;
     private List<String> dividedText = new ArrayList<>();
 
-    public  ToSingleLowercaseStringParser(String givenText){
+    public ToSingleLowercaseStringParser(String givenText) {
         this.givenText = givenText;
         generateStringArray();
         makeSortedStringArray();
@@ -37,6 +37,6 @@ public class ToSingleLowercaseStringParser {
     }
 
     public String getLongestWord() {
-        return dividedText.get(dividedText.size()-1);
+        return dividedText.get(dividedText.size() - 1);
     }
 }
