@@ -11,7 +11,7 @@ public class TemplateHandlerImpl implements TemplateHandler {
     private Employee employee;
     private String template;
 
-    StringBuilder resultString = new StringBuilder();
+    private StringBuilder resultString = new StringBuilder();
 
     public TemplateHandlerImpl(Client client, Employee employee, String template) {
         this.client = client;
