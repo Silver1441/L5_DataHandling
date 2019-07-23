@@ -11,7 +11,7 @@ import java.time.Month;
 public class AgeMain {
     public static void main(String[] args) {
         LocalDateTime birthDay = LocalDateTime.of
-                (2019, Month.JULY, 14, 22, 38, 50);
+                (1991, Month.JUNE, 18, 22, 38, 50);
         AgeCalculator ageDeterminer = new AgeCalculatorImpl(birthDay);
 
         ageDeterminer.calculateAge();
